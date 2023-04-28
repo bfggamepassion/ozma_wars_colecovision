@@ -1,0 +1,6 @@
+@echo off
+sdcc -mz80 --code-loc 0x8048 --data-loc 0x7000 --no-std-crt0 ../crtcv.rel ../cvlib.lib ../getput.lib bios0.rel bios1.rel charset.rel levels.rel main.rel music.rel sprites.rel
+objcopy --input-target=ihex --output-target=binary crtcv.ihx result.rom
+del *.ihx
+del crtcv.lnk
+pause
